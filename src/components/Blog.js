@@ -7,6 +7,7 @@ import Posts from './Posts/Posts';
 import NewPost from './NewPost/NewPost';
 import FullPost from './FullPost/FullPost';
 import UpdatePost from './UpdatePost/UpdatePost';
+import Persons from './../container/Person/Person'
 import ContactData from './ContactData/contactData'
 import MyButton from './UI/Button/Button';
 import ButtonAppBar from './UI/AppBar/AppBar';
@@ -39,6 +40,11 @@ class Blog extends Component {
                                 activeClassName="my-active">Contact</NavLink>
 
                 </MyButton>
+                <MyButton>
+                <NavLink to="/person"  exact
+                                activeClassName="my-active">Person</NavLink>
+
+                </MyButton>
               
                 <MyButton thisColor="inherit">
                 <NavLink to={{
@@ -57,6 +63,7 @@ class Blog extends Component {
                     <Route path="/posts/:id" exact component={FullPost} />
                     <Route path="/posts/update/:id" exact component={UpdatePost} />
                     <Route path="/contactData" exact component={ContactData} />
+                    <Route path="/person" exact component={Persons} />
                     <Redirect from="/" to="/posts" />
                     {/* <Route path="/" component={Posts} /> */}
                 </Switch>
