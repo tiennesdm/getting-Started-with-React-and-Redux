@@ -12,6 +12,7 @@ import ContactData from './ContactData/contactData'
 import MyButton from './UI/Button/Button';
 import ButtonAppBar from './UI/AppBar/AppBar';
 import classes from  '../components/Blog';
+import Counter from './../container/Counter/Counter';
 
 class Blog extends Component {
     render () {
@@ -45,6 +46,11 @@ class Blog extends Component {
                                 activeClassName="my-active">Person</NavLink>
 
                 </MyButton>
+                <MyButton>
+                <NavLink to="/counter"  exact
+                                activeClassName="my-active">Counter</NavLink>
+
+                </MyButton>
               
                 <MyButton thisColor="inherit">
                 <NavLink to={{
@@ -64,6 +70,7 @@ class Blog extends Component {
                     <Route path="/posts/update/:id" exact component={UpdatePost} />
                     <Route path="/contactData" exact component={ContactData} />
                     <Route path="/person" exact component={Persons} />
+                    <Route path="/counter" exact component={Counter} />
                     <Redirect from="/" to="/posts" />
                     {/* <Route path="/" component={Posts} /> */}
                 </Switch>

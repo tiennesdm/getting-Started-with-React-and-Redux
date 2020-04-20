@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import Person from '../../components/Person/Person';
 import AddPerson from '../../components/AddPerson/AddPerson';
 // import * as actionTypes from '../store/actions';
-import * as actionTypes from '../../store/action';
+import * as actionTypes from '../../store/Person/action';
 
 class Persons extends Component {
     
@@ -27,8 +27,9 @@ class Persons extends Component {
 }
 
 const mapStateToProps = state => {
+    console.log(state);
     return {
-        prs: state.persons
+        prs: state.red.persons
     };
 };
 
