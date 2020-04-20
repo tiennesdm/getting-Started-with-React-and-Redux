@@ -5,9 +5,12 @@ import React, { Component } from 'react';
 // import classes from './ContactData.css';
 // import axios from '../../../axios-orders';
 // import Input from '../../../components/UI/Input/Input';
-import Button from '../UI/Button/Button';
+import MyButton from '../UI/Button/Button';
 import Spinner from '../UI/Spinner/Spinner';
 // import classes from '../ContactData/'
+// import classes from './../ContactData/ContactData.css';
+import Input from './../UI/Input/Input'
+import CenteredGrid from './../UI/Grid/Grid'
 
 class ContactData extends Component {
     state = {
@@ -110,14 +113,16 @@ class ContactData extends Component {
             price: this.props.price,
             orderData: formData
         }
-        axios.post( '/orders.json', order )
-            .then( response => {
-                this.setState( { loading: false } );
-                this.props.history.push( '/' );
-            } )
-            .catch( error => {
-                this.setState( { loading: false } );
-            } );
+        console.log(JSON.stringify(order));
+        this.setState({loading: false});
+        // axios.post( '/orders.json', order )
+        //     .then( response => {
+        //         this.setState( { loading: false } );
+        //         this.props.history.push( '/' );
+        //     } )
+        //     .catch( error => {
+        //         this.setState( { loading: false } );
+        //     } );
     }
 
     checkValidity(value, rules) {
@@ -173,11 +178,13 @@ class ContactData extends Component {
     render () {
         const formElementsArray = [];
         for (let key in this.state.orderForm) {
+            console.log('inLoop',key, this.state.orderForm)
             formElementsArray.push({
                 id: key,
                 config: this.state.orderForm[key]
             });
         }
+        console.log('myFOrm', formElementsArray);
         let form = (
             <form onSubmit={this.orderHandler}>
                 {formElementsArray.map(formElement => (
@@ -191,16 +198,26 @@ class ContactData extends Component {
                         touched={formElement.config.touched}
                         changed={(event) => this.inputChangedHandler(event, formElement.id)} />
                 ))}
-                <Button btnType="Success" disabled={!this.state.formIsValid}>ORDER</Button>
+                <MyButton btnType="Success" disabled={!this.state.formIsValid}>ORDER</MyButton>
             </form>
         );
         if ( this.state.loading ) {
             form = <Spinner />;
         }
         return (
-            <div className={classes.ContactData}>
+            // <div className={classes.ContactData}>
+            //     <h4>Enter your Contact Data</h4>
+            //     {form}
+            // </div>
+            <div>
+                <CenteredGrid>
+                {/* <MyCard> */}
                 <h4>Enter your Contact Data</h4>
                 {form}
+                {/* </MyCard> */}
+
+                </CenteredGrid>
+               
             </div>
         );
     }

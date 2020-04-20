@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
 import './NewPost.css';
+import classes from './NewPost.css';
 
 class NewPost extends Component {
     state = {
@@ -36,7 +37,7 @@ class NewPost extends Component {
             redirect = <Redirect to="/posts" />;
         }
         return (
-            <div className="NewPost">
+            <div className={classes.NewPost}>
                 {redirect}
                 <h1>Add a Post</h1>
                 <label>Title</label>

@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import './Post.css';
+import classes from'./Post.css';
 
 const post = (props) =>{
     let style = {
@@ -9,10 +9,10 @@ const post = (props) =>{
         height: "10",
     }
     return  (
-        <article className="Post" onClick={props.clicked} onDoubleClick={props.mousePress}>
+        <article className={classes.Post} onClick={props.clicked} onDoubleClick={props.mousePress}>
             <h1>{props.title}</h1>
-            <div className="Info">
-                <div className="Author">{props.author}</div>
+            <div className={classes.Info}>
+                <div className={classes.Author}>{props.author}</div>
             </div>
             <img src={props.url} alt={props.title} width={style.width} height={style.height} />
         </article>
