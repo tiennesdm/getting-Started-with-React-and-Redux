@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-// import Person from '../components/Person/Person';
-// import AddPerson from '../components/AddPerson/AddPerson';
 import Person from '../../components/Person/Person';
 import AddPerson from '../../components/AddPerson/AddPerson';
-// import * as actionTypes from '../store/actions';
 import * as actionTypes from '../../store/Person/action';
 
 class Persons extends Component {

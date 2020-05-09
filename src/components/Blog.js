@@ -11,8 +11,9 @@ import Persons from './../container/Person/Person'
 import ContactData from './ContactData/contactData'
 import MyButton from './UI/Button/Button';
 import ButtonAppBar from './UI/AppBar/AppBar';
-import classes from  '../components/Blog';
+// import classes from  '../components/Blog';
 import Counter from './../container/Counter/Counter';
+import UploadFile from './Upload/upload';
 
 class Blog extends Component {
     render () {
@@ -30,10 +31,9 @@ class Blog extends Component {
                 <ButtonAppBar>
                       <MyButton thisColor="secondary">
                 <NavLink
-                                to="/posts/"
+                                to="/posts/" 
                                 exact
                                 activeClassName="my-active"
-                                class ={classes.myTextColor}
                         >Posts</NavLink>
                 </MyButton>
                 <MyButton>
@@ -49,6 +49,11 @@ class Blog extends Component {
                 <MyButton>
                 <NavLink to="/counter"  exact
                                 activeClassName="my-active">Counter</NavLink>
+
+                </MyButton>
+                <MyButton>
+                <NavLink to="/upload"  exact
+                                activeClassName="my-active">Upload</NavLink>
 
                 </MyButton>
               
@@ -71,6 +76,8 @@ class Blog extends Component {
                     <Route path="/contactData" exact component={ContactData} />
                     <Route path="/person" exact component={Persons} />
                     <Route path="/counter" exact component={Counter} />
+                    <Route path="/upload" exact component={UploadFile} />
+
                     <Redirect from="/" to="/posts" />
                     {/* <Route path="/" component={Posts} /> */}
                 </Switch>

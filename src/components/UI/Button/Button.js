@@ -17,7 +17,8 @@ export default function MyButton(props) {
     if(props.thisColor){
         myColor = props.thisColor
     }
-    let myVariant ="h6";
+    console.log(myColor);
+    let myVariant ="text";
     if(props.variant){
         myVariant = props.variant
     }

@@ -31,8 +31,9 @@ export default function ButtonAppBar(props) {
           <Typography variant="h6" className={classes.title}>
             News
           </Typography>
-          <div variant="h6" className={classes.title}
-          >   {props.children}</div>
+          {props.children}
+          {/* <div variant="h6" className={classes.title}
+          >   {props.children}</div> */}
           {/* <Button color="inherit">Login</Button> */}
         </Toolbar>
       </AppBar>
